@@ -1,0 +1,21 @@
+import timeit
+
+# 测试 1：用 {} 创建空字典（100万次）
+time_literal = timeit.timeit(
+    setup="",  # 无前置准备
+    stmt="dic = {}",  # 要测试的代码
+    number=1_000_000  # 执行次数：100万次
+)
+
+# 测试 2：用 dict() 创建空字典（100万次）
+time_function = timeit.timeit(
+    setup="",
+    stmt="dic = dict()",
+    number=1_000_000
+)
+
+# 输出结果
+print(f"用 {{}} 创建 100万次空字典：{time_literal:.6f} 秒")
+print(f"用 dict() 创建 100万次空字典：{time_function:.6f} 秒")
+print(f"差异：{time_function - time_literal:.6f} 秒")
+print(f"{{}} 比 dict() 快 {time_function / time_literal:.2f} 倍")
