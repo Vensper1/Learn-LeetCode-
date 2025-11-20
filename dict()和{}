@@ -19,3 +19,9 @@ print(f"用 {{}} 创建 100万次空字典：{time_literal:.6f} 秒")
 print(f"用 dict() 创建 100万次空字典：{time_function:.6f} 秒")
 print(f"差异：{time_function - time_literal:.6f} 秒")
 print(f"{{}} 比 dict() 快 {time_function / time_literal:.2f} 倍")
+
+
+用 {} 创建 100万次空字典：0.009903 秒
+用 dict() 创建 100万次空字典：0.029264 秒
+差异：0.019361 秒
+{} 比 dict() 快 2.96 倍
